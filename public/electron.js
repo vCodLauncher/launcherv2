@@ -3,7 +3,7 @@ const { ipcMain, dialog} = require('electron');
 const { app, BrowserWindow } = require('electron');
 const isDev = require('electron-is-dev');
 
-
+let updateWindow;
 function createWindow() {
     ipcMain.handle('getUserDataPath', (event) => {
         const userDataPath = app.getPath('userData');
@@ -22,7 +22,7 @@ function createWindow() {
             });
     });
 
-    const updateWindow = new BrowserWindow({
+    updateWindow = new BrowserWindow({
         width: 300,
         height: 400,
         resizable: false,
@@ -49,6 +49,7 @@ function createWindow() {
         updateWindow.close();
         launchMainWindow();
     });
+
     if (isDev) {
         updateWindow.webContents.openDevTools({ mode: 'detach' });
     }
@@ -56,7 +57,7 @@ function createWindow() {
 
 
 function launchMainWindow() {
-    mainWindow = new BrowserWindow({
+    updateWindow = new BrowserWindow({
         width: 1400,
         height: 900,
         resizable: false,
@@ -68,17 +69,19 @@ function launchMainWindow() {
         },
     });
 
-    mainWindow.setIcon(path.join(__dirname, 'assets/logo/app/codlite_logo.png'));
-    mainWindow.setTitle('COD Launcher');
+    updateWindow.setIcon(path.join(__dirname, 'assets/logo/app/codlite_logo.png'));
+    updateWindow.setTitle('COD Launcher');
 
-    mainWindow.loadURL(
+    updateWindow.loadURL(
         isDev
             ? 'http://localhost:3000'
             : `file://${path.join(__dirname, '../build/index.html')}`
     );
 
+
+
     if (isDev) {
-        mainWindow.webContents.openDevTools({ mode: 'detach' });
+        updateWindow.webContents.openDevTools({ mode: 'detach' });
     }
 
 }

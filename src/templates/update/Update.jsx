@@ -1,24 +1,78 @@
+import React, { useEffect, useState } from 'react';
 import '../../modules/update/Update.css';
-const { ipcRenderer } = window.require("electron");
+
+const { ipcRenderer } = window.require('electron');
 
 export default function Update() {
+    const [message, setMessage] = useState('Checking for update');
+    const [progressStyle, setProgressStyle] = useState({ display: 'none' });
+    const [progressValue, setProgressValue] = useState(0);
+    const [dots, setDots] = useState('');
 
-    setTimeout(() => {
-        ipcRenderer.invoke('startUpdatedGame').catch((error) => {
-            console.error(error);
-        });
-    }, 3000);
+    useEffect(() => {
+        const dotInterval = window.setInterval(() => {
+            setDots((prevDots) => (prevDots.length >= 3 ? '' : prevDots + '.'));
+        }, 500);
+
+        setTimeout(() => {
+            ipcRenderer
+                .invoke('startUpdatedGame')
+                .catch((error) => {
+                    console.error(error);
+                });
+        }, 6000);
+
+        setTimeout(() => {
+            setMessage('Installing Update');
+            setProgressStyle({ display: 'block' });
+
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i <= 100) {
+                    setProgressValue(i);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    setProgressStyle({ display: 'none' });
+                    setMessage('Starting Launcher');
+                    setTimeout(() => {
+                        ipcRenderer
+                            .invoke('startUpdatedGame')
+                            .catch((error) => {
+                                console.error(error);
+                            });
+                    }, 3000);
+                }
+            }, 20);
+
+            return () => {
+                clearInterval(interval);
+                clearInterval(dotInterval);
+            };
+        }, 3000);
+
+        return () => {
+            clearInterval(dotInterval);
+        };
+    }, []);
 
     return (
         <>
             <div className="container">
-                <img alt="logo" className="logo" src="/assets/logo/app/codlite_logo.png"/>
+                <img alt="logo" className="logo" src="/assets/logo/app/codlite_logo.png" />
 
-                <h4 id="message" className="message">Checking for update <p id="wait"></p></h4>
+                <h4 className="message">
+                    {message}
+                    <span id="wait">{dots}</span>
+                </h4>
 
-                <progress id="progress" className="progress progress1" max="100" value="0"></progress>
+                <progress
+                    className="progress progress1"
+                    max="100"
+                    value={progressValue}
+                    style={progressStyle}
+                ></progress>
             </div>
         </>
-    )
+    );
 }
-
