@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+}
+
+:not(input):not(textarea),
+:not(input):not(textarea)::after,
+:not(input):not(textarea)::before {
+    -webkit-user-select: none;
+    user-select: none;
+}
+input, button, textarea, :focus {
+    outline: none;  /* You should add some other style for :focus to help UX/a11y */
+}
+
+a {
+    color: white !important;
+    font-family: Staatliches, sans-serif;
+}
+
+.competitiveContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/public/assets/background/game/cod1-modified.png");
+    background-size: cover;
+    flex-direction: column !important;
+}
+
+.competitive {
+    width: 50%;
+    height: 70%;
+    /*background-color: blue;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column !important;
+    gap: 10rem;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10rem;
+}
+
+.infoContainer {
+    width: 47.6%;
+    height: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: Roboto mono;
+    color : white;
+    font-size: 13px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quitContainer {
+    margin-top: 1rem;
+    width: 20%;
+    height: 5%;
+    background-color: #d53434;
+    font-family: Staatliches, sans-serif;
+    border-radius: 2px;
+    color : white;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/*
+    MATCHYPE
+*/
+
+.matchtypeCard {
+    width: 16rem;
+    height: 30rem;
+    border: 2px solid gray;
+    background-image:
+            linear-gradient(to top, black, transparent),
+            url("/public/assets/background/cards/card1.png");
+    background-position: center, center;
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+    filter: grayscale(100%); /* rend l'image en noir et blanc */
+    border-radius: 1px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color : white;
+    flex-direction: column;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+.matchtypeCard.active {
+    filter: grayscale(0%); /* restaure les couleurs originales */
+    border: 2px solid #af2e2e;
+}
+
+.matchtypeCard:hover {
+    filter: grayscale(0%); /* restaure les couleurs originales */
+    border: 2px solid #af2e2e;
+}
+
+.matchtypeTitle {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #d51634;
+    font-family: Staatliches, sans-serif;
+}
+
+.textContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    font-family: Staatliches, sans-serif;
+}
+
+.matchtypeSubTitle {
+    text-transform: uppercase;
+    font-size: 15px;
+    color: white;
+    font-family: Staatliches, sans-serif;
+}
+
+.matchtypeDescription {
+    text-transform: uppercase;
+    font-size: 10px;
+    color: gray;
+    font-family: Staatliches, sans-serif;
+}
+
+/*
+    SECOND CARD
+ */
+
+.matchtypeCardRanked {
+    width: 15rem;
+    height: 30rem;
+    border: 2px solid gray;
+    background-image:
+            linear-gradient(to top, black, transparent),
+            url("/public/assets/background/cards/card4.jpeg");
+    background-position: center, center;
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+    filter: grayscale(100%);
+    border-radius: 1px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color : white;
+    flex-direction: column;
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+
+.matchtypeCardRanked:hover {
+    filter: grayscale(0%); /* restaure les couleurs originales */
+    border: 2px solid #af2e2e;
+}
+
+
+.matchtypeCardRanked.active {
+    filter: grayscale(0%);
+    border: 2px solid #af2e2e;
+}
+
+
+
+
+
+

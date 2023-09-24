@@ -45,7 +45,7 @@ const VCod = () => {
                             </div>
                         </div>
                     </div>
-                    <a href="../modules/competitive/competitive.html" className={styles.nolink}>
+                    <a href="/typeparty" className={styles.nolink}>
                         <div className={styles.matchtypeContainer}>
                             <div className={styles.matchtype}>
                                 <div className={styles.matchtypeBackground}>

@@ -1,0 +1,79 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/public/assets/background/game/cod1-modified.png");
+    background-size: cover;
+    flex-direction: column !important;
+}
+
+.containerCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+    width: 100vw;
+    height: 100vh;
+}
+
+.card {
+    width: 16rem;
+    height: 30rem;
+    border: 2px solid gray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(100%); /* rend l'image en noir et blanc */
+    border-radius: 1px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color : white;
+    flex-direction: column;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    filter: grayscale(0%); /* restaure les couleurs originales */
+    border: 2px solid #af2e2e;
+}
+
+.matchtypeTitle {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #d51634 !important;
+    font-family: Staatliches, sans-serif;
+}
+
+.textContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    font-family: Staatliches, sans-serif;
+}
+
+.matchtypeSubTitle {
+    text-transform: uppercase;
+    font-size: 15px;
+    color: white;
+    font-family: Staatliches, sans-serif;
+}
+
+.matchtypeDescription {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: white;
+    font-family: Staatliches, sans-serif;
+    background-color: black;
+    width: 16rem;
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
