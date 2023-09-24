@@ -1,0 +1,262 @@
+/*
+    GLOBAL
+ */
+
+.content {
+    background-color: #000;
+    background-image: url("/public/assets/background/game/cod1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 88vh;
+    display: flex;
+    flex-direction: row;
+    transition: background-image 0.5s ease;
+    font-family: Poppins !important;
+}
+
+
+
+.gameContainer {
+    position: static;
+    top: 0;
+    padding-left: 7rem;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    width: 80vw;
+    transform: translateY(20px);
+
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gameTitle {
+    font-size: 4.5rem;
+    color: white;
+    text-align: left;
+    font-family: 'Staatliches', sans-serif;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.2s ease;
+    margin-left: 4rem;
+    font-family: Staatliches, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.containerButton {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+}
+
+.buttonPlay {
+    background-color: #dde8e8;
+    width: 17rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: Poppins, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-left: 4rem;
+}
+.buttonPlay:hover {
+    background-color: #ffffff;
+
+}
+
+.buttonPlay > p {
+    margin-left: 1.2rem;
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+
+}
+
+.playIcon {
+    position: relative;
+    z-index: 2;
+    transition: all 1s;
+}
+
+.loader {
+    background: #a5a5a5;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: width 3s;
+}
+
+.buttonPlay.loading .loader {
+    width: 100%;
+}
+
+.buttonSettings{
+    background-color: #dde8e8;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    cursor: pointer;
+    justify-content: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.playIcon:hover{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.roomContainer {
+    margin-top: 2rem;
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.roomContainer h1{
+    font-family: Poppins, sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin: 20px 0px 10px 0;
+}
+.roomSaloonContainer {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.roomBox {
+    width: 15rem;
+    height: 7.5rem;
+    background-color: rgba(23, 22, 22, 0.8);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+}
+
+.roomBox:hover {
+    background-color: rgba(22, 22, 22);
+    transform: scale(1.02);
+
+}
+
+.roomTitle {
+    font-family: Poppins, sans-serif;
+    color: white;
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.roomOnline {
+    font-family: Poppins, sans-serif;
+    color: white;
+    font-size: 14px;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+}
+
+/*
+    MATCHTYPE
+*/
+
+.matchtypeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row !important;
+    margin-top: 5rem;
+    gap: 10rem;
+    margin-left: 2rem;
+    font-family: Poppins !important;
+}
+
+.matchtype{
+    width: 25rem;
+    height: 12rem;
+    border: 2px solid gray;
+    filter: grayscale(100%); /* rend l'image en noir et blanc */
+    border-radius: 2px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color : white;
+    flex-direction: column;
+    transition: 0.3s ease-in-out;
+}
+
+.matchtypeBackground {
+    width: 100%;
+    height: 80%;
+    background-image:
+            linear-gradient(to top, black, transparent),
+            url("/public/assets/background/cards/card21.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.matchtypeBackgroundBr {
+    width: 100%;
+    height: 80%;
+    background-image:
+            linear-gradient(to top, black, transparent),
+            url("/public/assets/background/cards/card18.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.matchtype:hover {
+    filter: grayscale(0%); /* rend l'image en noir et blanc */
+}
+
+.matchtypeNameContainer {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto mono";
+    font-size: 28px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Staatliches, sans-serif;
+}
+
+.nolink {
+    text-decoration: none;
+}
+

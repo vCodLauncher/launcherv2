@@ -9,7 +9,7 @@
     flex-direction: column;
 }
 
-.navbar-container-hub {
+.navbarContainerHub {
     background-color: #111010;
     width: fit-content;
     height: fit-content;
@@ -22,16 +22,16 @@
     border-radius: 30px;
 }
 
-.navbar-not-show {
+.navbarNotShow {
 
 }
 
 
-.navbar-logo {
+.navbarLogo {
 
 }
 
-.navbar-container-game {
+.navbarContainerGame {
     position: relative;
     background-color: #111010;
     width: 80%;
@@ -46,7 +46,7 @@
     margin-top: 3rem;
 }
 
-.navbar-game {
+.navbarGame {
     background-color: #363636;
     width: 42px;
     height: 42px;
@@ -57,12 +57,12 @@
     cursor: pointer;
 }
 
-.navbar-game img {
+.navbarGame img {
     width: 32px;
     height: 32px;
 }
 
-.navbar-game:hover {
+.navbarGame:hover {
     background-size: cover;
     background-position: 50%;
     background-color: #151515;
@@ -70,7 +70,7 @@
 
 }
 
-.navbar-game-active {
+.navbarGameActive {
     background-color: #000;
     transition: 0.0s ease-in-out;
     border: 2px solid rgba(255, 255, 255, 0.185);
