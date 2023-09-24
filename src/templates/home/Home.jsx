@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <>
             <Navbar/>
-            <VCod/>
+            <VCod gameTitle={"Call of Duty :"} subGameTitle={"Classic"} gameBackground={'url("/assets/background/game/cod1.png")'} versionList={["1.1", "1.1X", "1.2", "1.3"]}/>
         </>
     )
 }

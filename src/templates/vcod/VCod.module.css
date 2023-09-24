@@ -47,6 +47,7 @@ html,body {
 
 
 .gameContainer {
+
     top: 0;
     padding-left: 7rem;
     display: flex;
@@ -62,6 +63,7 @@ html,body {
 }
 
 .gameTitle {
+    margin-top: 50px;
     font-size: 4.5rem;
     color: white;
     text-align: left;
@@ -74,6 +76,7 @@ html,body {
 }
 
 .containerButton {
+    margin-top: 69px;
     display: flex;
     flex-direction: row;
     gap: 1.2rem;
@@ -320,7 +323,7 @@ html,body {
 
 }
 
-.version-dropdown {
+.versionDropdown {
     visibility: hidden;
     display: flex;
     flex-direction: column;
@@ -337,7 +340,7 @@ html,body {
     z-index: 2;
     font-family: Poppins, sans-serif;
     top: 322px;
-    left: 347px;
+    left: 411px;
     transition: height 0.5s ease, visibility 0.5s ease;
     overflow: hidden;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -345,20 +348,20 @@ html,body {
 
 
 
-.dropdown-active {
-    height: auto;
+.dropdownActive {
     visibility: visible;
-    transition-delay: 0.3s;
+    height: auto;
+    transition: height 0.5s ease, visibility 0.5s ease;
 }
 
-.version-list {
+.versionList {
     list-style: none;
     padding: 0;
     margin: 0;
     padding-top: 15px;
 }
 
-.version-item {
+.versionItem {
     text-align: center;
     cursor: pointer;
     margin-top: 5px;
@@ -380,17 +383,17 @@ html,body {
     }
 }
 
-.version-item:hover {
+.versionItem:hover {
     background-color: white;
     color: black;
 }
 
-.dropdown-active .version-item {
+.dropdownActive .versionItem {
     opacity: 1;
     transition-delay: 0s; /* Supprimez le délai pour l'animation d'apparition */
 }
 
-.item-active {
+.itemActive {
     background-color: white;
     color: black;
 }
