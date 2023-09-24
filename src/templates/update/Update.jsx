@@ -1,5 +1,5 @@
 import '../../modules/update/Update.css';
-import { ipcRenderer } from "electron";
+const { ipcRenderer } = window.require("electron");
 
 export default function Update() {
 
