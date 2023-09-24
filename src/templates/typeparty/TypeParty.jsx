@@ -1,11 +1,9 @@
 import React from 'react';
 import styles from './TypeParty.module.css'; // Importez les styles depuis votre module CSS
 
-
 import "@fontsource/poppins";
 import "@fontsource/poppins/600.css";
 import "@fontsource/staatliches"
-
 
 const TypeParty = () => {
     return (

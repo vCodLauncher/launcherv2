@@ -14,6 +14,36 @@
     height: 25%;
 }
 
+.topBar > h1 {
+    font-family: Poppins;
+    color : white;
+    margin-left: 5rem;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.typeSelectContainer {
+    margin-top: 1rem;
+    width: 100%;
+    height: 3rem;
+    border-top: 0.5px solid rgba(105, 98, 98, 0.8);
+    border-bottom: 0.5px solid rgba(105, 98, 98, 0.8);
+    color : white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.typeNameContainer {
+    width: 10rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Staatliches;
+    font-size: 20px;
+}
+
 .middleBar {
     width: 100%;
     height: 50%;
@@ -21,10 +51,6 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-}
-
-.containerMiddleBar {
-
 }
 
 .leagueBox {
@@ -59,11 +85,99 @@
     border: 1px solid #11101090;
     background-color: rgba(255, 251, 251, 0.91);
     display: flex;
+    flex-direction: column;
+}
+
+.leaguePosition > p {
+    font-family: Staatliches;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    font-size: 20px;
+}
+
+.leaguePosition > h1 {
+    font-family: Staatliches;
+    padding-left: 2rem;
+    padding-top: 4rem;
+    font-size: 40px;
+}
+
+.statsBox {
+    width: 10rem;
+    height: 15rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border-right: 1px solid rgba(105, 98, 98, 0.8);
+    border-left: 1px solid rgba(105, 98, 98, 0.8);
+    border-top: 1px solid rgba(105, 98, 98, 0.8);
+    margin-left: 2rem;
+}
+
+.statsTitleBox {
+    width: 100%;
+    height: 25% !important;
+    display: flex;
     justify-content: center;
     align-items: center;
+    color :white;
+    font-family: Staatliches;
+    background-color: rgba(17, 16, 16, 0.8) !important;
+    font-size: 22px;
+}
+
+.statsBox > div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 40%;
+    border-bottom: 1px solid rgba(105, 98, 98, 0.8);
+    flex-direction: column;
+    background-color: rgba(17, 16, 16, 0.5);
+}
+
+.statsBox > div > h4 {
+    color : white;
+    font-family: Staatliches;
+    margin-left: 1rem;
+}
+
+.statsBox > div >  p {
+    color : #d02828;
+    font-family: Staatliches;
+    margin-left: 1rem;
+    font-size: 22px;
 }
 
 .bottomBar {
     width: 100%;
-    height: 25%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    border-top: 1px solid rgba(105, 98, 98, 0.8)
+}
+
+.quitContainer {
+    margin-left: 5rem;
+}
+
+.findMatchContainer {
+    margin-right: 5rem;
+}
+
+.findMatchButton {
+    width: 20rem;
+    height: 3rem;
+    background-color: #ef0909;
+    color : white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Staatliches;
+    cursor: pointer;
+    font-size: 22px;
 }
