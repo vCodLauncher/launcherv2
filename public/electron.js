@@ -23,7 +23,7 @@ function createWindow() {
     );
 
     if (isDev) {
-        win.webContents.openDevTools({ mode: 'detach' });
+        mainWindow.webContents.openDevTools({ mode: 'detach' });
     }
 
 }
