@@ -1,3 +1,23 @@
+/*
+    GLOBAL
+ */
+
+.content {
+    background-color: #000;
+    background-image: url("/public/assets/background/game/cod1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 88vh;
+    display: flex;
+    flex-direction: row;
+    transition: background-image 0.5s ease;
+    font-family: Poppins !important;
+}
+
+
+
 .gameContainer {
     position: static;
     top: 0;
@@ -20,6 +40,9 @@
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
     transition: opacity 0.2s ease;
     margin-left: 4rem;
+    font-family: Staatliches, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .containerButton {
@@ -170,6 +193,8 @@
     flex-direction: row !important;
     margin-top: 5rem;
     gap: 10rem;
+    margin-left: 2rem;
+    font-family: Poppins !important;
 }
 
 .matchtype{
@@ -191,7 +216,7 @@
     height: 80%;
     background-image:
             linear-gradient(to top, black, transparent),
-            url("../../../assets/cards/card21.jpeg");
+            url("/public/assets/background/cards/card21.jpeg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -203,7 +228,7 @@
     height: 80%;
     background-image:
             linear-gradient(to top, black, transparent),
-            url("../../../assets/cards/card18.jpeg");
+            url("/public/assets/background/cards/card18.jpeg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -228,4 +253,10 @@
     font-size: 28px;
     text-transform: uppercase;
     text-decoration: none;
+    font-family: Staatliches, sans-serif;
 }
+
+.nolink {
+    text-decoration: none;
+}
+

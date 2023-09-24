@@ -1,22 +1,24 @@
-import styles from './Navbar.module.css'
+import React from 'react';
+import styles from './Navbar.module.css';
+
 
 const Navbar = () => {
     return (
         <>
-            <div className="navbar">
-                <div className="navbar-container-game">
-                    <div className="navbar-game" id="cod1nav" onClick="switchGame('cod1')">
-                        <img src="../assets/game_logo/cod_1_logo.png" width="42" height="42" />
+            <div className={styles.navbar}>
+                <div className={styles.navbarContainerGame}>
+                    <div className={styles.navbarGame} id="cod1nav">
+                        <img src={"/assets/logo/game/cod_1_logo.png"} width="42" height="42" alt="Call of Duty 1 Logo" />
                     </div>
-                    <div className="navbar-game" id="coduonav" onClick="switchGame('cod_united_offensive')">
-                        <img src="../assets/game_logo/cod_uo_logo.png" width="42" height="42" />
+                    <div className={styles.navbarGame} id="coduonav">
+                        <img src="/assets/logo/game/cod_uo_logo.png" width="42" height="42" alt="Call of Duty United Offensive Logo" />
                     </div>
-                    <div className="navbar-game" id="cod2nav" onClick="switchGame('cod2')">
-                        <img src="../assets/game_logo/cod_2_logo.png" width="42" height="42" />
+                    <div className={styles.navbarGame} id="cod2nav">
+                        <img src="/assets/logo/game/cod_2_logo.png" width="42" height="42" alt="Call of Duty 2 Logo" />
                     </div>
                 </div>
-                <div className="navbar-not-show">
-t
+                <div className={styles.navbarNotShow}>
+
                 </div>
             </div>
         </>
