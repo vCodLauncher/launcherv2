@@ -1,9 +1,61 @@
 const path = require('path');
-
+const { ipcMain, dialog} = require('electron');
 const { app, BrowserWindow } = require('electron');
 const isDev = require('electron-is-dev');
 
+
 function createWindow() {
+    ipcMain.handle('getUserDataPath', (event) => {
+        const userDataPath = app.getPath('userData');
+        console.log(userDataPath)
+        return userDataPath;
+    });
+    ipcMain.on('open-folder-dialog', (event) => {
+        dialog
+            .showOpenDialog({properties: ['openDirectory']})
+            .then((result) => {
+                const selectedDirectory = result.filePaths[0];
+                event.sender.send('selected-folder', selectedDirectory);
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    });
+
+    const updateWindow = new BrowserWindow({
+        width: 300,
+        height: 400,
+        resizable: false,
+        fullscreenable: false,
+        frame: false,
+        movable: true,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+            enableRemoteModule: true,
+        },
+    });
+
+    updateWindow.setIcon(path.join(__dirname, 'assets/logo/app/codlite_logo.png'));
+    updateWindow.setTitle('COD Launcher - Update');
+    updateWindow.loadURL(
+        isDev
+            ? 'http://localhost:3000/update'
+            : `file://${path.join(__dirname, '../build/update.html')}`
+    );
+    updateWindow.setMenu(null);
+
+    ipcMain.handle('startUpdatedGame', (event) => {
+        updateWindow.close();
+        launchMainWindow();
+    });
+    if (isDev) {
+        updateWindow.webContents.openDevTools({ mode: 'detach' });
+    }
+}
+
+
+function launchMainWindow() {
     mainWindow = new BrowserWindow({
         width: 1400,
         height: 900,
@@ -15,6 +67,9 @@ function createWindow() {
             enableRemoteModule: true,
         },
     });
+
+    mainWindow.setIcon(path.join(__dirname, 'assets/logo/app/codlite_logo.png'));
+    mainWindow.setTitle('COD Launcher');
 
     mainWindow.loadURL(
         isDev
