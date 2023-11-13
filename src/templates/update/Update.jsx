@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../modules/update/Update.css';
 
 const { ipcRenderer } = window.require('electron');
 
 export default function Update() {
+    const navigate = useNavigate();
     const [message, setMessage] = useState('Checking for update');
     const [progressStyle, setProgressStyle] = useState({ display: 'none' });
     const [progressValue, setProgressValue] = useState(0);
     const [dots, setDots] = useState('');
 
     useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            navigate('/login'); // Redirige vers la page de connexion si aucun token n'est trouvé
+            return;
+        }
+
         const dotInterval = window.setInterval(() => {
             setDots((prevDots) => (prevDots.length >= 3 ? '' : prevDots + '.'));
         }, 500);
@@ -18,7 +26,7 @@ export default function Update() {
             ipcRenderer
                 .invoke('startUpdatedGame')
                 .catch((error) => {
-                    console.error(error);
+                    console.error('Error starting updated game:', error);
                 });
         }, 6000);
 
@@ -39,7 +47,7 @@ export default function Update() {
                         ipcRenderer
                             .invoke('startUpdatedGame')
                             .catch((error) => {
-                                console.error(error);
+                                console.error('Error starting updated game:', error);
                             });
                     }, 3000);
                 }
@@ -54,7 +62,7 @@ export default function Update() {
         return () => {
             clearInterval(dotInterval);
         };
-    }, []);
+    }, [navigate]);
 
     return (
         <>
