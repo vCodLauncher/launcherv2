@@ -7,16 +7,15 @@ import TypeParty from "./templates/typeparty/TypeParty";
 import RankedVCod from "./templates/RankedvCod/RankedVCod";
 import UnrankedVCod from "./templates/unrankedvcod/UnrankedVCod";
 import Me from "./modules/me/Me";
-import Login from '../src/modules/login/Login'; // Assurez-vous que ce chemin est correct
+import Login from '../src/modules/login/Login';
 
 import "@fontsource/poppins";
 import "@fontsource/poppins/600.css";
 import "@fontsource/staatliches";
 import RankedLaunch from "./templates/rankedlaunch/RankedLaunch";
 
-// Composant ProtectedRoute
 const ProtectedRoute = ({ children }) => {
-    const isLoggedIn = localStorage.getItem('token'); // Remplacez 'token' par la clé appropriée
+    const isLoggedIn = localStorage.getItem('token');
 
     return isLoggedIn ? children : <Navigate to="/login" />;
 };
